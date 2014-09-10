@@ -19,6 +19,7 @@ Propile::Application.routes.draw do
     put 'removeTrack', :on => :member
     get 'program_board_cards', :on => :member
     get 'export', :on => :member
+    get 'full_export', :on => :member
     get 'preview', :on => :member
   end
 

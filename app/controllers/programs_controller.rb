@@ -23,6 +23,14 @@ class ProgramsController < ApplicationController
       end
     end
   end
+  
+  def full_export
+    @program = Program.find(params[:id])
+    respond_to do |format|
+      format.html { render :json => @program.to_json(:include => { :program_entries =>  {:include => {:session => {:include => [:first_presenter, :second_presenter]}}}})  }
+      format.json { render json: @program }	     
+    end
+  end
 
 
   def program_board_cards

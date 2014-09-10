@@ -2,7 +2,7 @@
   <i> This page is for maintainers only </i>
 <% end %>
 
-<p> You can create different flavours of a program and then decide which one is the best. 
+<p> You can create different 100000 flavours of a program and then decide which one is the best. 
 </p>
 
 <p> 
@@ -29,6 +29,7 @@ A Program's Program Attendance Factor is the average over all the voters.
     <th></th>
     <th></th>
     <th></th>
+   <th></th>
   </tr>
 
 <% @programs.each_with_index do |program, i| %>
@@ -44,6 +45,8 @@ A Program's Program Attendance Factor is the average over all the voters.
     <td> <%= link_to 'Destroy', program, method: :delete %> </td>
     <td> <%= link_to 'Preview', controller: 'programs', action: 'preview', id: program.to_param %></td>
     <td> <%= link_to 'Export', controller: 'programs', action: 'export', id: program.to_param %></td>
+    <td> <%= link_to 'FullExport', controller: 'programs', action: 'full_export', id: program.to_param %></td>
+  </tr>
   </tr>
 <% end %>
 </table>
