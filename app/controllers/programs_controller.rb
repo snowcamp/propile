@@ -1,6 +1,8 @@
 require 'csv'
 
 class ProgramsController < ApplicationController
+  skip_before_filter :authorize_action, :only => [:export, :full_export]
+
   def index
     @programs = Program.all
 
